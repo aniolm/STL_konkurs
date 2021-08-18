@@ -12,7 +12,7 @@ namespace std {
 std::ostream& operator<<(std::ostream& o, const std::pair<std::string, int>& p) {
     return o << p.first;
 }
-}  // namespace std
+}  
 
 std::string readFile(const std::string& file) {
     std::ifstream fs(file);
@@ -25,6 +25,7 @@ std::string readFile(const std::string& file) {
     fs.close();
     return text;
 }
+
 std::vector<std::string> text2vector(const std::string& text) {
     std::istringstream ss(text);
     std::vector<std::string> textVector;
@@ -41,7 +42,6 @@ std::map<std::string, int> text2map(const std::string& text) {
                   std::istream_iterator<std::string>(),
                   [&duplicateTable](const std::string& word) { duplicateTable[word]++; });
     return duplicateTable;
-    ;
 }
 
 void printWordsOfTheSameLenght(const std::vector<std::string>& text, const std::string& referenceWord) {
